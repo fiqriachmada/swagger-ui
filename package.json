@@ -46,7 +46,7 @@
     "build:es:bundle": "cross-env NODE_ENV=production BABEL_ENV=production BROWSERSLIST_ENV=isomorphic-production webpack --color --config webpack/es-bundle.js",
     "build:es:bundle:core": "cross-env NODE_ENV=production BABEL_ENV=esm BROWSERSLIST_ENV=browser-production webpack --color --config webpack/es-bundle-core.js",
     "clean": "rimraf ./dist",
-    "dev": "cross-env NODE_ENV=development BABEL_ENV=development BROWSERSLIST_ENV=browser-development webpack serve --config webpack/dev.js",
+    "dev": "cross-env NODE_ENV=development BABEL_ENV=development BROWSERSLIST_ENV=browser-development webpack serve --config webpack/dev.js --port 31430",
     "deps-license": "license-checker --production --csv --out $npm_package_config_deps_check_dir/licenses.csv && license-checker --development --csv --out $npm_package_config_deps_check_dir/licenses-dev.csv",
     "deps-size": "cross-env NODE_ENV=development webpack -p --config webpack/bundle.js --json | webpack-bundle-size-analyzer >| $npm_package_config_deps_check_dir/sizes.txt",
     "deps-check": "run-s deps-license deps-size",
